@@ -10,7 +10,7 @@
 // @connect      api.torn.com
 // ==/UserScript==
 
-var apiKey = '###PDA-APIKEY###'; // Put your API KEY Here (Or - torn PDA will fill this for you)
+var apiKey = 'APIKEY'; // Put your API KEY Here
 var noGoHours = 10; // time in hours to not let you fly without hassle
 
 
