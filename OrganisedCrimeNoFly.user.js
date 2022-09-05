@@ -5,7 +5,6 @@
 // @author       Cloak [2737340]
 // @match        https://www.torn.com/travelagency.php
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=torn.com
-// @require  http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js
 // @grant        none
 // @connect      api.torn.com
 // ==/UserScript==
@@ -118,8 +117,9 @@ let crimeTime = user.icons.icon85 ?
     user.icons.icon86 ?
     user.timestamp * TO_MILLIS.SECONDS :
     -1;
+
+async function loopy(){
 // Wait for travel button
-while (1) {
     await waitForTravelButton();
     // is time less than noGoHours?
     if (crimeTime < user.timestamp * TO_MILLIS.SECONDS + (noGoHours * TO_MILLIS.HOURS)) {
@@ -129,8 +129,11 @@ while (1) {
         // SO U WANNA PRESS TRAVEL ANYWAY?
         await waitForTravelQuestion();
         let old = $(".travel-question > span:visible").html()
-        $(".travel-question > span:visible").html("<span style='color: red;'><b>Are you <u>REALLY SURE?</u>. You have an OC due in less than "+noGoHours+" hours.</b></span><br>" + old)
+        $(".travel-question > span:visible").html("<span style='color: red;'><b>Are you <u>REALLY SURE?</u>. You have an OC due in less than 10 hours.</b></span><br>" + old)
         $("button:contains('CONTINUE'):visible").css("background", "red")
         $("button:contains('CONTINUE'):visible").css("color", "white")
     }
+    window.setTimeout(loopy,200);
 }
+
+loopy();
