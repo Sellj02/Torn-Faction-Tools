@@ -9,7 +9,7 @@
 // @connect      api.torn.com
 // ==/UserScript==
 
-var apiKey = 'APIKEY'; // Put your API KEY Here
+var apiKey = 'xNiQMmz4ttDpsFBQ'; // Put your API KEY Here
 var noGoHours = 10; // time in hours to not let you fly without hassle
 
 
